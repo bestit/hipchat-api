@@ -3,6 +3,7 @@
     "description": "Hipchat API written in PHP optimized for Laravel.",
     "keywords": ["hipchat", "laravel"],
     "require": {
+        "php": "^7.0",
         "guzzlehttp/guzzle": "^6.2"
     },
     "require-dev": {
