@@ -5,8 +5,7 @@ return [
     | HipChat Server
     |--------------------------------------------------------------------------
     |
-    | URL to the HipChat instance. Leave null if you are not using the
-    | self-hosted version with a custom url.
+    | URL to your HipChat instance e.g. https://company.hipchat.com.
     |
     */
 

@@ -12,7 +12,15 @@ From the command line, run:
 composer require bestit/hipchat-api
 ```
 
-### Step 2: Service Provider
+### Step 2: Publishing config
+
+From the command line, run:
+
+```
+php artisan vendor:publish --provider HipChatServiceProvider
+```
+
+### Step 3: Service Provider
 
 For your Laravel app, open `config/app.php` and, within the `providers` array, append:
 
@@ -22,7 +30,7 @@ Bestit\HipChat\HipChatServiceProvider::class,
 
 This will bootstrap the package into Laravel.
 
-### Step 3: Facade
+### Step 4: Facade
 
 For your Laravel app, open `config/app.php` and, within the `aliases` array, append:
 
@@ -32,7 +40,7 @@ For your Laravel app, open `config/app.php` and, within the `aliases` array, app
 
 This will add the HipChat Facade into Laravel.
 
-### Step 4: Configuration
+### Step 5: Configuration
 
 Add the following entries to your environment (.env) file:
 
@@ -41,7 +49,7 @@ HIPCHAT_SERVER_URL // This is optional, defaults to 'https://api.hipchat.com'
 HIPCHAT_API_TOKEN // This is required, use a user personal token.
 ```
 
-### Usage
+### Usage within Laravel
 
 - Notification in a Room
 
@@ -60,6 +68,18 @@ HIPCHAT_API_TOKEN // This is required, use a user personal token.
     // you have two optional parameters, `alert` and `format`
     ```
      Read more: [here](https://www.hipchat.com/docs/apiv2/method/private_message_user)
+
+### Usage outside of Laravel
+
+```php
+$url = 'https://company.hipchat.com'; // Can be left empty, default to https://api.hipchat.com
+$token = 'some_api_token';
+$client = new \Bestit\HipChat\Client($token, $url);
+
+$client->room('RoomNameOrRoomId')->notify('Some Cool Message');
+
+$client->user('UserEmailOrId')->notify('Some Cool Message');
+```
 
 ### Todo
 - Cover more API Endpoints

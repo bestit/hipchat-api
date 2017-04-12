@@ -11,15 +11,15 @@
     },
     "autoload": {
         "psr-4": {
-            "Bestit\\": "src"
+            "Bestit\\HipChat\\": "src/"
         }
     },
     "license": "MIT",
     "authors": [
         {
             "name": "Ahmad El-Bardan",
-            "email": "el-bardan@bestit-online.de"
+            "email": "ahmad.el-bardan@bestit-online.de"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
