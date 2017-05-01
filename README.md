@@ -1,10 +1,10 @@
 ## bestit/hipchat-api
 
-This a very simple HipChat API optimized for Laravel 5.
+This a very simple HipChat API optimized for Laravel & Lumen version 5.
 
 ## Installation
 
-### Step 1: Composer
+### Install via Composer
 
 From the command line, run:
 
@@ -12,7 +12,9 @@ From the command line, run:
 composer require bestit/hipchat-api
 ```
 
-### Step 2: Publishing config
+### Laravel 5
+
+### Step 1: Publishing config
 
 From the command line, run:
 
@@ -20,7 +22,7 @@ From the command line, run:
 php artisan vendor:publish --provider HipChatServiceProvider
 ```
 
-### Step 3: Service Provider
+### Step 2: Service Provider
 
 For your Laravel app, open `config/app.php` and, within the `providers` array, append:
 
@@ -30,7 +32,7 @@ Bestit\HipChat\HipChatServiceProvider::class,
 
 This will bootstrap the package into Laravel.
 
-### Step 4: Facade
+### Step 3: Facade
 
 For your Laravel app, open `config/app.php` and, within the `aliases` array, append:
 
@@ -40,7 +42,7 @@ For your Laravel app, open `config/app.php` and, within the `aliases` array, app
 
 This will add the HipChat Facade into Laravel.
 
-### Step 5: Configuration
+### Step 4: Configuration
 
 Add the following entries to your environment (.env) file:
 
@@ -49,7 +51,22 @@ HIPCHAT_SERVER_URL // This is optional, defaults to 'https://api.hipchat.com'
 HIPCHAT_API_TOKEN // This is required, use a user personal token.
 ```
 
-### Usage within Laravel
+### Lumen 5
+
+### Step 1: Service provider
+
+Inside your bootstrap/app.php file, add:
+
+```
+$app->register(Bestit\HipChat\HipChatLumenServiceProvider::class);
+```
+
+### Step 2: Configuration
+
+Copy the ```vendor/bestit/hipchat-api/src/config/hipchat.php``` file to your local config directory (if not exists must create) and don't forget add the entries to your environment (.env) file described in Step 4 of the Laravel Configuration. 
+
+
+### Usage
 
 - Notification in a Room
 
@@ -69,7 +86,7 @@ HIPCHAT_API_TOKEN // This is required, use a user personal token.
     ```
      Read more: [here](https://www.hipchat.com/docs/apiv2/method/private_message_user)
 
-### Usage outside of Laravel
+### Usage outside of Laravel / Lumen
 
 ```php
 $url = 'https://company.hipchat.com'; // Can be left empty, default to https://api.hipchat.com
