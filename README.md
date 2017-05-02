@@ -63,8 +63,7 @@ $app->register(Bestit\HipChat\HipChatLumenServiceProvider::class);
 
 ### Step 2: Configuration
 
-Copy the ```vendor/bestit/hipchat-api/src/config/hipchat.php``` file to your local config directory (if not exists must create) and don't forget add the entries to your environment (.env) file described in Step 4 of the Laravel Configuration. 
-
+Copy the ```vendor/bestit/hipchat-api/src/config/hipchat.php``` file to your local config directory (if it does not exist yet, you have to create it) and don't forget add the entries to your environment (.env) file described in Step 4 of the Laravel Configuration. 
 
 ### Usage
 
