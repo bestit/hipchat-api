@@ -21,5 +21,10 @@
             "email": "ahmad.el-bardan@bestit-online.de"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "develop"
+        }
+    }
 }
